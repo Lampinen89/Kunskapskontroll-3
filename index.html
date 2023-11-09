@@ -9,24 +9,27 @@
 		<div id="wrapper">
 
 			<div id="container">
+
 				<div class="card">
 					<div id="search-form">
 						<input type="text" name="movies" placeholder="Enter name of movie">
-						<button>Search</button>
-					</div id="search-form">
-				</div>
-			</div>
-			
-			<template>
-				<div class="card">
-					<div id="container">
-						<ul>
-						</ul>
+						<button id="search">Search</button>
 					</div>
 				</div>
-			</template> 
 
+					<div id="search-result"></div>
+
+			</div>
 		</div>
+		
+		<template id="search-item">
+			<a href="" class="card" target="_blank">
+				<img src="" alt="">
+				<h2></h2>
+				<h4></h4>
+				<h5></h5>
+			</a>
+		</template> 
 		
 		<script src="js/main.js"></script>
 	</body>

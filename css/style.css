@@ -15,6 +15,12 @@ textarea:focus, input:focus {
     max-width: 1200px;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .card {
     background-color: white;
     border: 1px solid rgba(255, 0, 1, 0.5);
@@ -40,7 +46,7 @@ textarea:focus, input:focus {
 
 #search-form input:hover, #search-form input:focus {
     transition: all 1s ease-in-out;
-    width: 75%;
+    width: 50%;
     border-color: black;
 }
 
@@ -58,4 +64,24 @@ textarea:focus, input:focus {
     background-color: rgba(255, 0, 1, 0.8);
     opacity: 0.75;
     box-shadow: 0 5px 10px rgba(200, 0, 1, 0.75);
+}
+
+#search-result {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+}
+
+#search-result img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#search-result h4, #search-result h5 {
+    font-size: medium;
 }
