@@ -21,20 +21,22 @@
 * http://www.omdbapi.com/?apikey=[yourkey]&s=star trek&type=series
 *
 */
-let url = 'http://www.omdbapi.com/?apikey=c5de1655&s=batman';
+let url = 'http://www.omdbapi.com/?apikey=c5de1655';
 
 document.getElementById('search').addEventListener('click', fetchMovies);
 
 async function fetchMovies() {
+    let searchTerm = document.querySelector('#search-form > input').value;
+
     let searchResult = document.getElementById('search-result');
     searchResult.innerHTML = "";
     let template = document.getElementById('search-item');
     
-    const response = await fetch (url);
+    const response = await fetch (url + "&s=" + searchTerm);
     const movies = await response.json();
 
     for (let index = 0; index < movies.Search.length; index++) {
-        const listItem =  template.content.cloneNode(true)
+        const listItem =  template.content.cloneNode(true);
         let searchItem = movies.Search[index];
 
         let poster = listItem.querySelector('img');
@@ -51,7 +53,8 @@ async function fetchMovies() {
 
         let type = listItem.querySelector('h5');
         type.innerHTML = "Type: " + searchItem.Type;
-        
+
         searchResult.append(listItem);
     }
+
 }
